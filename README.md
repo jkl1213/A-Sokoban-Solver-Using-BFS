@@ -5,6 +5,13 @@ but all codes are my own.
 #### The goal of the game is to push all the boxes to the destinations 
 ![sokoban](https://user-images.githubusercontent.com/79690350/126941817-a7056730-caf3-40c7-babf-107763b746e0.jpeg)
 
+#### Breadth First Search (BFS) can be used to solve the game of Sokoban 
+Breadth-first search (BFS) is an algorithm for searching a tree data structure for a node that satisfies a given property. It starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level. Extra memory, usually a queue, is needed to keep track of the child nodes that were encountered but not yet explored.
+
+It differs from its counterpart DFS in that it searches all possible scenarios at the current level before going down the next level.
+For example, it goes through A, then B, C, D, then E, F instead of going through one branch until it reaches bottom.
+<img width="368" alt="Screenshot 2021-07-26 at 2 22 06 PM" src="https://user-images.githubusercontent.com/79690350/126942365-d3a8db0f-bd1c-4de6-8b8e-aec789702e32.png">
+
 #### First we import packages
 #copy.deepcopy is needed for duplicating multidimensional lists in Python
 ```
