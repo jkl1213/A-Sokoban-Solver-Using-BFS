@@ -1,5 +1,7 @@
 ### A-Sokoban-Solver-Using-BFS
 In this fun project I implemented Breadth First Search using Python to solve a "Push the Box" game that is quite popular on mobile. 
+Remark: The notations for the layout of the game are borrowed from others (link:https://home.cse.ust.hk/~yqsong/teaching/comp3211/projects/2017Fall/G14.pdf)
+but all codes are my own.
 
 #### First we import packages
 #copy.deepcopy is needed for duplicating multidimensional lists in Python
