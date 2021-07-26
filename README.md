@@ -256,8 +256,6 @@ def bfs(visited, node):
         content = node.name
     
         
-        #print ("s:",s, end = " ") 
-        
         if solution(content) is True:
             print("solution reached")
             return content, node
