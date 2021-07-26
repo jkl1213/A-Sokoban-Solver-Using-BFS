@@ -277,3 +277,5 @@ results = bfs(visited, e)
 for node in results[1].path:
     print(show_map(node.name))
 ```
+![Screenshot 2021-07-26 at 12 44 37 PM](https://user-images.githubusercontent.com/79690350/126934198-ec282f72-fbeb-41eb-b672-0dc2f37f5e89.png)
+
