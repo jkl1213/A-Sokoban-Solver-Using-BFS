@@ -2,6 +2,8 @@
 In this fun project I implemented Breadth First Search using Python to solve a "Push the Box" game that is quite popular on mobile. 
 Remark: The notations for the layout of the game are borrowed from others (link:https://home.cse.ust.hk/~yqsong/teaching/comp3211/projects/2017Fall/G14.pdf)
 but all codes are my own.
+#### The goal of the game is to push all the boxes to the destinations 
+![sokoban](https://user-images.githubusercontent.com/79690350/126941817-a7056730-caf3-40c7-babf-107763b746e0.jpeg)
 
 #### First we import packages
 #copy.deepcopy is needed for duplicating multidimensional lists in Python
