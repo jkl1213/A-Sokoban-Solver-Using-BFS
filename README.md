@@ -3,10 +3,12 @@ In this fun project I implemented Breadth First Search using Python to solve a "
 
 #### First we import packages
 #copy.deepcopy is needed for duplicating multidimensional lists in Python
+```
 import copy
 from anytree import Node
-
+```
 #### Let's write functions to show the layout of the problem, get location of players and locations of boxes
+```
 def show_map(layout):
     for i in range(len(layout)):
         print(layout[i])
@@ -25,9 +27,10 @@ def locations(layout,obj):
             if layout[i][j] == obj:
                 results.append((i,j))
     return results
+```
 ### Example problem is stored in a text file
 #example problem
-
+```
 filename = "/Users/User/Downloads/problem.txt"
 f = open(filename,"r")
 lines=f.readlines()
@@ -38,10 +41,11 @@ for line in lines:
 for i in example:
     i.remove("\n")
 show_map(example)
-
+```
 ![Screenshot 2021-07-26 at 12 01 25 PM](https://user-images.githubusercontent.com/79690350/126931394-1b4aeb30-582d-4751-b92c-2e714e827cc2.png)
 
-### Change the layout accordingly after one move of up, down, left, or right
+### Change the layout accordingly after one move of up, down, left, or right (We only show the function for up here but all directions are basically the same function with slightly changed coordinates -- just think about how the game works)
+```
 def up(problem):
     layout = problem
     ##print("before:")
@@ -142,8 +146,9 @@ def up(problem):
 #show_map(example)
 example_copy = copy.deepcopy(example)
 up(example_copy)
-
+```
 ### Detect when the layout is in a deadlock and there's no way to reach destinations anymore
+```
 def corner(problem, box):
     layout = problem
     up = (box[0]-1,box[1])
@@ -188,7 +193,9 @@ def deadlock(problem):
             return True
     return False
 deadlock(example)
+```
 ### Detect when the layout is a solution and all boxes are in the destinations
+```
 def solution(problem):
     layout = copy.deepcopy(problem)
     a = 0
@@ -209,7 +216,9 @@ for line in lines:
 for i in example:
     i.remove("\n")
 show_map(example)
+```
 ### Get all possible next moves including the ones that result in a deadlock or not moving due to blockage (i.e. the "next move" can be the same as the previous move if for example moving up is not possible)
+```
 def next_possible(problem):
     layout = copy.deepcopy(problem)
     a = up(layout)
@@ -221,7 +230,9 @@ def next_possible(problem):
     d = right(layout)
     return [a,b,c,d]
 next_possible(example)
+```
 ### Implementation of Breadth First Search using node tree to record path
+```
 visited = [] # List to keep track of visited nodes.
 queue = []     #Initialize a queue
 
@@ -258,6 +269,9 @@ def bfs(visited, node):
 # Driver Code
 e = Node(example, parent=None)
 results = bfs(visited, e)
+```
 ### Show the path to solving the Sokoban puzzle
+```
 for node in results[1].path:
     print(show_map(node.name))
+```
